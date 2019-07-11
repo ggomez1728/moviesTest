@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="detailTableViewCellId" selectionStyle="none" indentationWidth="10" rowHeight="421" id="KGk-i7-Jjw" customClass="DetailTableViewCell" customModule="merqueo_ios_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="613" height="421"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="613" height="420.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-XX-tZB">
+                        <rect key="frame" x="0.0" y="0.0" width="613" height="350"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="350" id="TIg-4J-4l5"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2F-Gs-xHp">
+                        <rect key="frame" x="518" y="310" width="60" height="60"/>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="3np-5f-N81"/>
+                            <constraint firstAttribute="width" secondItem="c2F-Gs-xHp" secondAttribute="height" multiplier="1:1" id="MFa-A6-FNe"/>
+                        </constraints>
+                        <state key="normal" image="icon-play"/>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="c2F-Gs-xHp" secondAttribute="trailing" constant="15" id="O8Z-Af-ISs"/>
+                    <constraint firstItem="x2T-XX-tZB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VQP-i8-bHK"/>
+                    <constraint firstAttribute="trailing" secondItem="x2T-XX-tZB" secondAttribute="trailing" id="VpB-iL-5QF"/>
+                    <constraint firstItem="x2T-XX-tZB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gmP-m2-llW"/>
+                    <constraint firstAttribute="bottom" secondItem="x2T-XX-tZB" secondAttribute="bottom" constant="50" id="xe3-43-ctO"/>
+                    <constraint firstItem="c2F-Gs-xHp" firstAttribute="top" secondItem="x2T-XX-tZB" secondAttribute="bottom" constant="-40" id="y0V-eG-1Sf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="playButton" destination="c2F-Gs-xHp" id="xub-QQ-4QD"/>
+                <outlet property="poster" destination="x2T-XX-tZB" id="T7r-24-BIo"/>
+            </connections>
+            <point key="canvasLocation" x="339.85507246376812" y="99.441964285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon-play" width="30" height="30"/>
+    </resources>
+</document>
