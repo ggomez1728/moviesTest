@@ -1,6 +1,0 @@
-framework module Pods_merqueo_ios_test {
-  umbrella header "Pods-merqueo-ios-test-umbrella.h"
-
-  export *
-  module * { export * }
-}
