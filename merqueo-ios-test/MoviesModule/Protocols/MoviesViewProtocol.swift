@@ -25,7 +25,7 @@ protocol MoviePresenterProtocol {
 protocol MovieInteractorInputProtocol {
   var presenter: MoviesPresenter? {get set}
   //Presenter -> Interactor
-  func fetchGetRecentSearches()
+  func getMovies(for Query: String, page: Int)
 }
 
 

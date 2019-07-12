@@ -22,6 +22,10 @@ class MoviesPresenter: MoviesViewProtocol {
   func getAllMovies(from Page: Int) {
     movieInteractor?.getAllMovies(from: Page)
   }
+  
+  func getMovies(for Query: String, page: Int) {
+    movieInteractor?.getMovies(for: Query, page: page)
+  }
 }
 
 
@@ -37,7 +41,9 @@ extension MoviesPresenter: MovieInteractorOutputProtocol{
   }
   
   func movieDetailFetched(movie: MovieData?, errorMessage: String?) {
-    movieWireframe?.navigateToDetailPage(show: movie!, from: viewRef!)
+    if let movie = movie{
+       movieWireframe?.navigateToDetailPage(show: movie, from: viewRef!)
+    }
   }
   
   

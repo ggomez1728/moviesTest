@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MoviesViewController: UIViewController {
 
   var presenter = MoviesPresenter()
 
-  var movies: [MovieData] = []
+  var movies: [MovieData] = []{
+    didSet{
+      list.reloadData()
+    }
+  }
   var dateFormatter = DateFormatter()
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var list: UICollectionView!
+  
+  let disposeBag = DisposeBag()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +34,25 @@ class MoviesViewController: UIViewController {
       dateFormatter.dateFormat = "dd-MM-YYYY"
       setupCollectionView()
       searchBar.delegate = self
-    }
+      
+      searchBar
+        .rx.text // Observable property thanks to RxCocoa
+        .orEmpty // Make it non-optional
+        .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+        .distinctUntilChanged()
+       // .filter { !$0.isEmpty }
+        .subscribe(onNext :{ query in
+          if query.isEmpty{
+            self.presenter.getAllMovies(from: 1)
+          } else {
+            self.presenter.getMovies(for: query, page: 1)
+          }
+        })
+        .disposed(by: disposeBag)
+      
+      
+      
+  }
   
   
   func setupCollectionView(){
@@ -85,7 +111,6 @@ extension MoviesViewController: MoviePresenterProtocol {
   func updateTheRecentSearchList(recentSavedSearchs: [MovieData]?, error: Error?) {
     guard let recentSavedSearchs = recentSavedSearchs else { return }
     movies = recentSavedSearchs
-    list.reloadData()
   }
   
   
