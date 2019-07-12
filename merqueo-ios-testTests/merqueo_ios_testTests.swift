@@ -25,6 +25,15 @@ class merqueo_ios_testTests: XCTestCase {
     XCTAssertEqual(movie.poster_path, "url_test")
   }
   
+  func testCrewAttributes() {
+    let attributes: [String : Any] = ["id": 10, "name": "content example", "job": "title job", "profile_path": "url_test"]
+    let crew = CrewData(routeAttributes: attributes as [String : AnyObject])
+    XCTAssertEqual(crew.id, 10)
+    XCTAssertEqual(crew.name, "content example")
+    XCTAssertEqual(crew.job, "title job")
+    XCTAssertEqual(crew.profile_path, "url_test")
+  }
+  
   override func tearDown() {
     super.tearDown()
     // Put teardown code here. This method is called after the invocation of each test method in the class.

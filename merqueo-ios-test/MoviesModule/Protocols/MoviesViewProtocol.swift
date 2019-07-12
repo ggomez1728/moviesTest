@@ -9,12 +9,9 @@
 import UIKit
 
 protocol MoviesViewProtocol {
-  
   func viewDidLoad()
   func getAllMovies(from Page: Int)
-  
 }
-
 
 protocol MoviePresenterProtocol {
   //Presenter -> View

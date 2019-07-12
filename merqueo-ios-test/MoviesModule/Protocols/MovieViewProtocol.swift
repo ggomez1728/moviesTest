@@ -29,6 +29,5 @@ protocol MovieDetailInteractorInputProtocol {
 protocol MovieDetailInteractorOutputProtocol {
   //Interactor -> Protocol
   func didFinishFetchingRecentSearchResults(allMovies: [CrewData]?, error: Error?)
-  func movieDetailFetched(movie: MovieData?, errorMessage: String?)
   
 }

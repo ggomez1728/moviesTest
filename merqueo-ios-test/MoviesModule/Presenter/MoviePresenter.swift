@@ -35,9 +35,7 @@ extension MoviePresenter: MovieDetailInteractorOutputProtocol{
     viewRef?.updateTheCurrentMovie(crew: crewsResults, error: nil)
   }
   
-  func movieDetailFetched(movie: MovieData?, errorMessage: String?) {
-    
-  }
+
   
   
 }
