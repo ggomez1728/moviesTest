@@ -12,8 +12,14 @@ import RxCocoa
 
 class MoviesViewController: UIViewController {
 
+  private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+  private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+  
+  
   var presenter = MoviesPresenter()
 
+  var moviesDB =  [Movie]()
+  
   var movies: [MovieData] = []{
     didSet{
       list.reloadData()
@@ -50,8 +56,28 @@ class MoviesViewController: UIViewController {
         })
         .disposed(by: disposeBag)
       
-      
-      
+      getCoreData()
+  }
+  
+  func getCoreData(){
+    do {
+      moviesDB = try context.fetch(Movie.fetchRequest())
+    } catch let error as NSError {
+      print("Could not fetch. \(error), \(error.userInfo)")
+    }
+  }
+  
+  func saveMovie(data: MovieData){
+    guard let id = data.id, let overview  = data.overview, let original_title  = data.original_title, let title  = data.title, let poster_path  = data.poster_path else {
+      return
+    }
+    let movie = Movie(entity: Movie.entity(), insertInto: context)
+    movie.id  = Int64(id)
+    movie.overview = overview
+    movie.original_title = original_title
+    movie.title = title
+    movie.poster_path = poster_path
+    appDelegate.saveContext()
   }
   
   
@@ -111,6 +137,9 @@ extension MoviesViewController: MoviePresenterProtocol {
   func updateTheRecentSearchList(recentSavedSearchs: [MovieData]?, error: Error?) {
     guard let recentSavedSearchs = recentSavedSearchs else { return }
     movies = recentSavedSearchs
+    recentSavedSearchs.forEach { movieData in
+      saveMovie(data: movieData)
+    }
   }
   
   
