@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B1CF10D4DB0BDA8183F4EADE /* Pods_merqueo_ios_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B83AF3DF3319B2F5447133F /* Pods_merqueo_ios_testTests.framework */; };
+		C750BD7222DD49C800B4290B /* merqueo_ios_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C750BD7022DD49C800B4290B /* merqueo_ios_test.xcdatamodeld */; };
+		C750BD7422DD4A9600B4290B /* CDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C750BD7322DD4A9600B4290B /* CDManager.swift */; };
 		C75C15B022D41D1F0072F790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75C15AF22D41D1F0072F790 /* AppDelegate.swift */; };
 		C75C15B522D41D1F0072F790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75C15B322D41D1F0072F790 /* Main.storyboard */; };
-		C75C15B822D41D1F0072F790 /* merqueo_ios_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75C15B622D41D1F0072F790 /* merqueo_ios_test.xcdatamodeld */; };
 		C75C15BA22D41D200072F790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75C15B922D41D200072F790 /* Assets.xcassets */; };
 		C75C15BD22D41D200072F790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75C15BB22D41D200072F790 /* LaunchScreen.storyboard */; };
 		C75C15C822D41D200072F790 /* merqueo_ios_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75C15C722D41D200072F790 /* merqueo_ios_testTests.swift */; };
@@ -71,6 +72,8 @@
 		68AEB029D9177E61A10B0E83 /* Pods-merqueo-ios-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merqueo-ios-testTests.release.xcconfig"; path = "Target Support Files/Pods-merqueo-ios-testTests/Pods-merqueo-ios-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		91CE3B5B0BB0252332743755 /* Pods-merqueo-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merqueo-ios-test.release.xcconfig"; path = "Target Support Files/Pods-merqueo-ios-test/Pods-merqueo-ios-test.release.xcconfig"; sourceTree = "<group>"; };
 		9E307A9EA99F7E4E0DA6E6A9 /* Pods-merqueo-ios-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-merqueo-ios-testUITests.debug.xcconfig"; path = "Target Support Files/Pods-merqueo-ios-testUITests/Pods-merqueo-ios-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C750BD7122DD49C800B4290B /* merqueo_ios_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = merqueo_ios_test.xcdatamodel; sourceTree = "<group>"; };
+		C750BD7322DD4A9600B4290B /* CDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDManager.swift; sourceTree = "<group>"; };
 		C75C15AC22D41D1F0072F790 /* merqueo-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "merqueo-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75C15AF22D41D1F0072F790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C75C15B422D41D1F0072F790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,9 +170,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C750BD6E22DD488D00B4290B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				C75C15B622D41D1F0072F790 /* merqueo_ios_test.xcdatamodeld */,
+				C750BD7322DD4A9600B4290B /* CDManager.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		C75C15A322D41D1F0072F790 = {
 			isa = PBXGroup;
 			children = (
+				C750BD7022DD49C800B4290B /* merqueo_ios_test.xcdatamodeld */,
 				C75C15AE22D41D1F0072F790 /* merqueo-ios-test */,
 				C75C15C622D41D200072F790 /* merqueo-ios-testTests */,
 				C75C15D122D41D200072F790 /* merqueo-ios-testUITests */,
@@ -192,6 +205,7 @@
 		C75C15AE22D41D1F0072F790 /* merqueo-ios-test */ = {
 			isa = PBXGroup;
 			children = (
+				C750BD6E22DD488D00B4290B /* DataBase */,
 				C75C160F22D453340072F790 /* Extensions */,
 				C75C15F422D421BB0072F790 /* WebServices */,
 				C75C15E022D41D850072F790 /* Common */,
@@ -200,7 +214,6 @@
 				C75C15AF22D41D1F0072F790 /* AppDelegate.swift */,
 				C75C15B922D41D200072F790 /* Assets.xcassets */,
 				C75C15BE22D41D200072F790 /* Info.plist */,
-				C75C15B622D41D1F0072F790 /* merqueo_ios_test.xcdatamodeld */,
 			);
 			path = "merqueo-ios-test";
 			sourceTree = "<group>";
@@ -617,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C750BD7222DD49C800B4290B /* merqueo_ios_test.xcdatamodeld in Sources */,
 				C7F57FAB22D4B8C0009D6575 /* DetailTableViewCell.swift in Sources */,
 				C75C160822D432760072F790 /* MovieData.swift in Sources */,
 				C75F41B622D6BAB900357A60 /* MoviePresenter.swift in Sources */,
@@ -629,7 +643,6 @@
 				C75C15EB22D41E6F0072F790 /* MovieCollectionViewCell.swift in Sources */,
 				C75C160B22D434B50072F790 /* MovieWireFrame.swift in Sources */,
 				C75F41BE22D6EAA500357A60 /* CrewData.swift in Sources */,
-				C75C15B822D41D1F0072F790 /* merqueo_ios_test.xcdatamodeld in Sources */,
 				C75C160122D428CD0072F790 /* MoviesViewProtocol.swift in Sources */,
 				C75C15E222D41D9A0072F790 /* Constants.swift in Sources */,
 				C7F57FAF22D4C890009D6575 /* OverviewTableViewCell.swift in Sources */,
@@ -637,6 +650,7 @@
 				C7FBF35822D830770032335B /* Movie+CoreDataClass.swift in Sources */,
 				C75C15F022D41F4C0072F790 /* MoviesViewController.swift in Sources */,
 				C75C15F822D4226E0072F790 /* WebServiceManager.swift in Sources */,
+				C750BD7422DD4A9600B4290B /* CDManager.swift in Sources */,
 				C7F57FB322D58553009D6575 /* DescriptionTableViewCell.swift in Sources */,
 				C75C160D22D440F90072F790 /* Alert.swift in Sources */,
 				C75C161122D4535E0072F790 /* UIImageView.swift in Sources */,
@@ -979,6 +993,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		C750BD7022DD49C800B4290B /* merqueo_ios_test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C750BD7122DD49C800B4290B /* merqueo_ios_test.xcdatamodel */,
+			);
+			currentVersion = C750BD7122DD49C800B4290B /* merqueo_ios_test.xcdatamodel */;
+			name = merqueo_ios_test.xcdatamodeld;
+			path = "merqueo-ios-test/DataBase/merqueo_ios_test.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		C75C15B622D41D1F0072F790 /* merqueo_ios_test.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

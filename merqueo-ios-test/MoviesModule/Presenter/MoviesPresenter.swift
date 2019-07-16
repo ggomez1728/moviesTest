@@ -17,6 +17,8 @@ class MoviesPresenter: MoviesViewProtocol {
   func viewDidLoad() {
     MovieWireFrame.loadMoviesListPageComponents(withPresenter: self) //Load all the components for this module
     getAllMovies(from: 1)
+    movieInteractor?.fetchGetRecentSearches() //Ask the interactor to update fetch the recent searches made by user.
+
   }
   
   func getAllMovies(from Page: Int) {
@@ -26,6 +28,8 @@ class MoviesPresenter: MoviesViewProtocol {
   func getMovies(for Query: String, page: Int) {
     movieInteractor?.getMovies(for: Query, page: page)
   }
+  
+  
 }
 
 
@@ -33,12 +37,13 @@ class MoviesPresenter: MoviesViewProtocol {
 
 extension MoviesPresenter: MovieInteractorOutputProtocol{
   func didFinishFetchingRecentSearchResults(allMovies: [MovieData]?, error: Error?) {
-    
+
     guard let moviesResults = allMovies else {
       return
     }
     viewRef?.updateTheRecentSearchList(recentSavedSearchs: moviesResults, error: nil)
   }
+  
   
   func movieDetailFetched(movie: MovieData?, errorMessage: String?) {
     if let movie = movie{
@@ -46,6 +51,13 @@ extension MoviesPresenter: MovieInteractorOutputProtocol{
     }
   }
   
+  func didFinishFetchingRecentSearchResults(allSearches: [MovieData]?, error: Error?) {
+    guard let searchResults = allSearches else {
+      return
+    }
+    
+    viewRef?.updateTheRecentSearchList(recentSavedSearchs: searchResults,error: nil) //Ask the view to update the recent search list
+  }
   
 }
 
